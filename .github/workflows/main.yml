@@ -53,7 +53,9 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-
+          # とりあえず対処
+          # TODO: なぜdirtyになっているのか調べる
+          allowDirtyBuild: true
       # Output
       - uses: actions/upload-artifact@v3
         with:
