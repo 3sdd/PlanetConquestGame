@@ -27,9 +27,11 @@ public class Planet : MonoBehaviour
 
         // 
         ringImage.color = owner.GetColor();
-        print(ringImage.color);
 
-        StartCoroutine(GenerateNewShipsCoroutine());
+        if (owner != Owner.None)
+        {
+            StartCoroutine(GenerateNewShipsCoroutine());
+        }
     }
 
 
