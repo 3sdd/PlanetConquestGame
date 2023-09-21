@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Planet : MonoBehaviour
 {
@@ -14,10 +15,19 @@ public class Planet : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI numShipsText;
 
+    [SerializeField]
+    Owner owner;
+
+    [SerializeField]
+    Image ringImage;
 
     private void Start()
     {
         UpdateCurrentNumShips(0);
+
+        // 
+        ringImage.color = owner.GetColor();
+        print(ringImage.color);
 
         StartCoroutine(GenerateNewShipsCoroutine());
     }
