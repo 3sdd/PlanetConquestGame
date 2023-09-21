@@ -43,8 +43,10 @@ public class Planet : MonoBehaviour
 
             yield return new WaitForSeconds(1);
 
-
-            UpdateCurrentNumShips(currentNumShips + 1);
+            if (currentNumShips < maxNumShips)
+            {
+                UpdateCurrentNumShips(currentNumShips + 1);
+            }
 
         }
     }
